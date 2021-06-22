@@ -13,8 +13,16 @@ def csv_to_json(csv_path, json_path):
 
     for line in open(csv_file_path, 'r').readlines()[1:]:
 
-        words=line.replace('\n', '').split(',')
+        # words=line.replace('\n', '').split(',')
         line_data={}
+
+        line = line.rstrip()
+        line = line.replace('"', '')
+        items = line.split(',')
+        key, values = items[0], [int(items[1]), int(items[2]), items[3]]
+        line_data[key] = values
+    return readmissions
+
     #     if line_count == 0:
     #         print ("1st line")
     #         line_count += 1
