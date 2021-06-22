@@ -1,6 +1,6 @@
 [
     {
-        "facility_name": "/n SOUTHEAST ALABAMA MEDICAL CENTER",
+        "facility_name": "SOUTHEAST ALABAMA MEDICAL CENTER",
         "facility_id": 10001,
         "measure_name": "READM-30-HIP-KNEE-HRRP",
         "number_of_discharges": "258.0",
@@ -8,7 +8,7 @@
         "number_of_readmissions": 17
     },
     {
-        "facility_name": "/n SOUTHEAST ALABAMA MEDICAL CENTER",
+        "facility_name": "SOUTHEAST ALABAMA MEDICAL CENTER",
         "facility_id": 10001,
         "measure_name": "READM-30-CABG-HRRP",
         "number_of_discharges": "268.0",
