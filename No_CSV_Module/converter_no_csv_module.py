@@ -13,15 +13,17 @@ def csv_to_json(csv_path, json_path):
 
     for line in open(csv_file_path, 'r').readlines()[1:]:
 
-        # words=line.replace('\n', '').split(',')
-        line_data={}
+      words=line.replace('\n', '').split(',')
+      line_data={}
 
-        line = line.rstrip()
-        line = line.replace('"', '')
-        items = line.split(',')
-        key, values = items[0], [int(items[1]), int(items[2]), items[3]]
-        line_data[key] = values
-    return readmissions
+    #     line = line.rstrip()
+    #     line = line.replace('"', '')
+    #     items = line.split(',')
+    #     key = items[0]
+    #     for key in line:
+    #       values=items[1], items[2], items[3], items[4], items[5]
+    #     line_data[key] = values
+    # return readmissions
 
     #     if line_count == 0:
     #         print ("1st line")
@@ -31,16 +33,16 @@ def csv_to_json(csv_path, json_path):
     #         line_count += 1
     # print(line)
 
-        for i in range(len(words)):
-          # set key names
-          if line_count!=0:
-            line_key = words[i].lower()
-          else: 
-            line_key = i
-          # set key/value
-          line_data[line_key] = words[i]
-        # add data to json store 
-        readmissions.append(line_data)
+      for i in range(len(words)):
+            # set key names
+        if line_count!=0:
+          line_key = words[i].lower()
+        else: 
+          line_key = i
+            # set key/value
+        line_data[line_key] = words[i]
+          # add data to json store 
+    readmissions.append(line_data)
 
 # def string_and_integer()
 
