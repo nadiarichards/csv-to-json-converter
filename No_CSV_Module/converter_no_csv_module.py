@@ -6,18 +6,34 @@ json_file_path='readmissions2.json'
 
 readmissions=[]
 
-def csv_to_json(csv_path, json_path):
+# def csv_to_json(csv_path, json_path):
+
+file=open(csv_file_path, 'r')
+lines=file.readlines()
+
+line_count=0
+line_data={}
+for line in lines:
+    # line_count+=1
+    # stripped_line=line.join([i for i in lines]).replace("/n", "").replace(" "" ", "")
+    # #strips the newline character
+    # # print("Line{}: {}".format(line_count, line.strip()))
+    # print(stripped_line)
+    key = line
+    line_data[key]=line
+    readmissions.append(line_data)
+print(readmissions)
 
     # if headers:
     #     columns = next(reader)
 
-    for line in open(csv_file_path, 'r').readlines()[1:]:
+    # for line in open(csv_file_path, 'r').readlines()[1:]:
 
 # Words is the last line of the doc as a list of objects[]
-      words=line.replace('\n', '').split(',')
+    #   words=line.replace('\n', '').split(',')
       # line_count=(len(line))
-      line_count=0
-      line_data={}
+    #   line_count=0
+    #   line_data={}
       # print(line[0])
 
         # line = line.rstrip()
@@ -32,14 +48,14 @@ def csv_to_json(csv_path, json_path):
 
       # print(words[0])
 
-      if line_count == 0:
-          print ("1st line", line)
-          line_count += 1
-      else:
-          print ("next line")
-          line_count += 1
-          print(line)
-    print(line_count)
+    #   if line_count == 0:
+    #       print ("1st line", line)
+    #       line_count += 1
+    #   else:
+    #       print ("next line")
+    #       line_count += 1
+    #       print(line)
+    # print(line_count)
 
     #   for i in range(line_count):
     #         # set key names
@@ -62,7 +78,9 @@ def csv_to_json(csv_path, json_path):
 #             except ValueError:
 #                 item[key] = str(value)
 
-    with open(json_file_path, 'w', encoding='utf-8') as json_file:
-        json_file.write(json.dumps(readmissions, indent=4))
 
-csv_to_json(csv_file_path, json_file_path)
+
+#     with open(json_file_path, 'w', encoding='utf-8') as json_file:
+#         json_file.write(json.dumps(readmissions, indent=4))
+
+# csv_to_json(csv_file_path, json_file_path)
