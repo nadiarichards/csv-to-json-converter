@@ -19,11 +19,14 @@ def csv_to_json(csv_path, json_path):
         # line = line.rstrip()
         # line = line.replace('"', '')
         # items = line.split(',')
-      key = words[0]
-      for key in line:
-        values=words[1], words[2], words[3], words[4], words[5]
-        line_data[key] = values
-      readmissions.append(line_data)
+
+      # key = words[0]
+      # for key in line:
+      #   values=words[1], words[2], words[3], words[4], words[5]
+      #   line_data[key] = values
+      # readmissions.append(line_data)
+
+      print(words)
 
     #     if line_count == 0:
     #         print ("1st line")
@@ -53,7 +56,7 @@ def csv_to_json(csv_path, json_path):
 #             except ValueError:
 #                 item[key] = str(value)
 
-    with open(json_file_path, 'w', encoding='utf-8') as json_file:
-        json_file.write(json.dumps(readmissions, indent=4))
+#     with open(json_file_path, 'w', encoding='utf-8') as json_file:
+#         json_file.write(json.dumps(readmissions, indent=4))
 
-csv_to_json(csv_file_path, json_file_path)
+# csv_to_json(csv_file_path, json_file_path)
