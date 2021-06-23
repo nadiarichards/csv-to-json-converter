@@ -9,20 +9,27 @@ readmissions=[]
 # def csv_to_json(csv_path, json_path):
 
 file=open(csv_file_path, 'r')
-lines=file.readlines()
-
+# headers
+header = file.readline()
+print(header)
+lines=file.readlines()[1:]
+# header=next(lines)
 line_count=0
 line_data={}
+# field_names=lines[]
+# print(header)
 for line in lines:
-    # line_count+=1
+    line_count+=1
     # stripped_line=line.join([i for i in lines]).replace("/n", "").replace(" "" ", "")
-    # #strips the newline character
-    # # print("Line{}: {}".format(line_count, line.strip()))
-    # print(stripped_line)
-    key = line
-    line_data[key]=line
-    readmissions.append(line_data)
-print(readmissions)
+    #strips the newline character
+    # print("Line{}: {}".format(line_count, line.strip()))
+    # print(line)
+
+#     key = line
+#     line_data[key]=line
+#     readmissions.append(line_data)
+# print(readmissions)
+
 
     # if headers:
     #     columns = next(reader)
