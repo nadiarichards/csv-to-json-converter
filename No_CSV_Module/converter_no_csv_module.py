@@ -4,25 +4,26 @@ from shlex import shlex
 csv_file_path='readmissions_df.csv'
 json_file_path='readmissions2.json'
 
-readmissions=[]
+# readmissions=[]
 
 # def csv_to_json(csv_path, json_path):
 
 file=open(csv_file_path, 'r')
-# headers
-headers = file.readline().strip().split(',')
+# # headers
+# headers = file.readline().strip().split(',')
 # print(headers[0])
 
-lines=file.readlines()[1:]
-line_count=0
-line_data={}
+# lines=file.readlines()[1:]
+# line_count=0
+# line_data=[]
 
-for line in lines:
-    line_count+=1
-    clean_lines=line.strip().split(',')
-    # print(clean_lines)
+# for line in lines:
+#     line_count+=1
+#     clean_lines=line.strip().split(',')
+#     line_data.append(line)
+#     print(line_data[1])
 
-# readmissions=[dict(zip(headers[0], row)) for row in clean_lines[0]]
+# readmissions=[dict(zip(headers, row)) for row in clean_lines]
 # print(readmissions)
 
     # stripped_line=line.join([i for i in lines]).replace("/n", "").replace(" "" ", "")
@@ -39,7 +40,20 @@ for line in lines:
     # if headers:
     #     columns = next(reader)
 
-    # for line in open(csv_file_path, 'r').readlines()[1:]:
+headers=[]
+data=[]
+line_count=0
+
+for line in file:
+    file.readline().split(',').strip()
+    if line_count == 0:
+        headers.append(line)
+        line_count+=1
+    else:
+        data.append(line)
+        line_count+=1
+print(line_count)
+print(headers)
 
 # Words is the last line of the doc as a list of objects[]
     #   words=line.replace('\n', '').split(',')
