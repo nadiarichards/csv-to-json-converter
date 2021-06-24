@@ -10,8 +10,9 @@ readmissions=[]
 
 file=open(csv_file_path, 'r')
 # headers
-header = file.readline()
-print(header)
+headers = file.readline()
+print(headers)
+
 lines=file.readlines()[1:]
 # header=next(lines)
 line_count=0
