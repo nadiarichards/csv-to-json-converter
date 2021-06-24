@@ -1,2 +1,10 @@
 # csv-to-json-converter
-An app built to convert CSV file into JSON.
+
+Converter from CSV to JSON without using any CSV parsing libraries. Was a fun challenge!
+
+### Languages used:
+Python
+
+### Python libraries used:
+* Re
+* json
