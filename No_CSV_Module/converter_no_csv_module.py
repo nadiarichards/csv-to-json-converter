@@ -11,18 +11,20 @@ readmissions=[]
 file=open(csv_file_path, 'r')
 # headers
 headers = file.readline().strip().split(',')
-print(headers[0])
+# print(headers[0])
 
 lines=file.readlines()[1:]
-# header=next(lines)
 line_count=0
 line_data={}
-# field_names=lines[]
-# print(header)
+
 for line in lines:
     line_count+=1
-    line.split(',').strip()
-    print(line)
+    clean_lines=line.strip().split(',')
+    # print(clean_lines)
+
+# readmissions=[dict(zip(headers[0], row)) for row in clean_lines[0]]
+# print(readmissions)
+
     # stripped_line=line.join([i for i in lines]).replace("/n", "").replace(" "" ", "")
     #strips the newline character
     # print("Line{}: {}".format(line_count, line.strip()))
