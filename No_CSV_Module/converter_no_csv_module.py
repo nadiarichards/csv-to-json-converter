@@ -1,6 +1,4 @@
 import json
-from shlex import shlex
-from itertools import chain
 
 csv_file_path='readmissions_df.csv'
 json_file_path='readmissions2.json'
@@ -13,7 +11,16 @@ json_file_path='readmissions2.json'
 
 with open (csv_file_path, 'r') as csv_file:
     readlines=csv_file.readlines()
-    lists=[line.split(",") for line in readlines]
+    lists=[]
+    for line in readlines:
+        list=line.rstrip("\n").replace('|', ',').split(',')
+        lists.append(list)
+
+    # readlines_one_delimiter= readlines.replace("|", ",")
+    # lists=re.split('; |, |\*|\n', readlines)
+    # lists=[line.rstrip("\n").split(",") for line in readlines]
+    # re.split("[|,]", lists)
+
     # new_list=[word for line in lists for word in line.split(",")]
     # for line in lists:
     #     data.extend(line.split(","))
@@ -23,18 +30,20 @@ with open (csv_file_path, 'r') as csv_file:
     keys=lists[0]
     values=lists[1:]
     readmissions=[dict(zip(keys, l)) for l in lists]
-    print(readmissions)
+
 
     # for row in lists:
     #     data.append(row)
-            
-    #     # for item in data:
-    #     #     for key, value in item.items():
-    #     try:
-    #         row[key] = int(value)
-    # .replace("\n", "")
-    #     except ValueError:
-    #         row[key] = str(value)
+
+    for item in readmissions:
+        for key, value in item.items():
+            key, value.strip()
+            try:
+                item[key] = int(value)
+            except ValueError:
+                item[key] = str(value)
+    
+    print(readmissions)
 
     # print(data[0])
     #     words = str(list).split(",")
@@ -76,7 +85,7 @@ with open (csv_file_path, 'r') as csv_file:
     #     columns = next(reader)
 
 # data=[]
-line_count=0
+# line_count=0
 
 # for line in file.readlines()[1:]:
 #     line.readline().split(',').strip()
