@@ -10,8 +10,8 @@ readmissions=[]
 
 file=open(csv_file_path, 'r')
 # headers
-headers = file.readline()
-print(headers)
+headers = file.readline().strip().split(',')
+print(headers[0])
 
 lines=file.readlines()[1:]
 # header=next(lines)
@@ -21,6 +21,8 @@ line_data={}
 # print(header)
 for line in lines:
     line_count+=1
+    line.split(',').strip()
+    print(line)
     # stripped_line=line.join([i for i in lines]).replace("/n", "").replace(" "" ", "")
     #strips the newline character
     # print("Line{}: {}".format(line_count, line.strip()))
