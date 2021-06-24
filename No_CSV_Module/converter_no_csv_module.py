@@ -1,4 +1,5 @@
 import json
+import re
 
 csv_file_path='readmissions_df.csv'
 json_file_path='readmissions2.json'
@@ -13,7 +14,8 @@ with open (csv_file_path, 'r') as csv_file:
     readlines=csv_file.readlines()
     lists=[]
     for line in readlines:
-        list=line.rstrip("\n").replace('|', ',').split(',')
+        split_list=line.rstrip("\n").replace('|', ',')
+        list=re.split(''',(?=(?:[^'"]|'[^']*'|"[^"]*")*$)''', split_list)
         lists.append(list)
 
     # readlines_one_delimiter= readlines.replace("|", ",")
