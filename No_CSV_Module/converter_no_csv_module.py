@@ -18,10 +18,23 @@ with open (csv_file_path, 'r') as csv_file:
     # new_list=[word for line in lists for word in line.split(",")]
     # for line in lists:
     #     data.extend(line.split(","))
-    for i in lists:
-        data.append(i[0].split(","))
+    # for i in lists:
+    #     data.append(i[0].split(","))
     # data=[i[0].split(",") for i in lists]
-    print(data)
+    print(lists[1][3])
+
+    # for row in lists:
+    #     data.append(row)
+            
+    #     # for item in data:
+    #     #     for key, value in item.items():
+    #     try:
+    #         row[key] = int(value)
+    # .replace("\n", "")
+    #     except ValueError:
+    #         row[key] = str(value)
+
+    print(data[0])
     #     words = str(list).split(",")
     #     print(words[0])
     # no need for readlines; the file is already an iterable of lines
