@@ -1,14 +1,34 @@
 import json
 from shlex import shlex
+from itertools import chain
 
 csv_file_path='readmissions_df.csv'
 json_file_path='readmissions2.json'
 
-# readmissions=[]
+readmissions=[]
 
 # def csv_to_json(csv_path, json_path):
 
-file=open(csv_file_path, 'r')
+# file=open(csv_file_path)
+data=[]
+
+with open (csv_file_path, 'r') as csv_file:
+    readlines=csv_file.readlines()
+    lists=[line.split(",") for line in readlines]
+    # new_list=[word for line in lists for word in line.split(",")]
+    # for line in lists:
+    #     data.extend(line.split(","))
+    for i in lists:
+        data.append(i[0].split(","))
+    # data=[i[0].split(",") for i in lists]
+    print(data)
+    #     words = str(list).split(",")
+    #     print(words[0])
+    # no need for readlines; the file is already an iterable of lines
+    # also, using generator expressions means no extra copies
+    # iterate tuples, instead of two separate iterables, so no need for zip
+    # print(new_list)
+
 # # headers
 # headers = file.readline().strip().split(',')
 # print(headers)
@@ -51,14 +71,16 @@ line_count=0
 # print(line_count)
 # print(data)
 
-list_of_lists=[]
-data = file.readlines()
-res = [i.strip("[]").split(", ") for i in data]
+# list_of_lists=[]
+# data = file.readlines()
+# res = [i.strip("[]").split(", ") for i in data]
+
 # lists = [i.strip("\n").split(", ") for i in res]
-for i in res:
-    i.split(',')
+# for i in res:
+#     for j in i:
+#         j.split(',').strip("\n")
 #     i.strip("[]").split(", ").replace("/n", "")
-    print(i)
+        # print(i)
 # print(res[0])
 
 # Words is the last line of the doc as a list of objects[]
