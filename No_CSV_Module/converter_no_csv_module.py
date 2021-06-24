@@ -5,12 +5,11 @@ from itertools import chain
 csv_file_path='readmissions_df.csv'
 json_file_path='readmissions2.json'
 
-readmissions=[]
+
 
 # def csv_to_json(csv_path, json_path):
 
 # file=open(csv_file_path)
-data=[]
 
 with open (csv_file_path, 'r') as csv_file:
     readlines=csv_file.readlines()
@@ -21,7 +20,10 @@ with open (csv_file_path, 'r') as csv_file:
     # for i in lists:
     #     data.append(i[0].split(","))
     # data=[i[0].split(",") for i in lists]
-    print(lists[1][3])
+    keys=lists[0]
+    values=lists[1:]
+    readmissions=[dict(zip(keys, l)) for l in lists]
+    print(readmissions)
 
     # for row in lists:
     #     data.append(row)
@@ -34,7 +36,7 @@ with open (csv_file_path, 'r') as csv_file:
     #     except ValueError:
     #         row[key] = str(value)
 
-    print(data[0])
+    # print(data[0])
     #     words = str(list).split(",")
     #     print(words[0])
     # no need for readlines; the file is already an iterable of lines
