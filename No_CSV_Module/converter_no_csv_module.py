@@ -11,7 +11,7 @@ json_file_path='readmissions2.json'
 file=open(csv_file_path, 'r')
 # # headers
 # headers = file.readline().strip().split(',')
-# print(headers[0])
+# print(headers)
 
 # lines=file.readlines()[1:]
 # line_count=0
@@ -40,20 +40,26 @@ file=open(csv_file_path, 'r')
     # if headers:
     #     columns = next(reader)
 
-headers=[]
-data=[]
+# data=[]
 line_count=0
 
-for line in file:
-    file.readline().split(',').strip()
-    if line_count == 0:
-        headers.append(line)
-        line_count+=1
-    else:
-        data.append(line)
-        line_count+=1
-print(line_count)
-print(headers)
+# for line in file.readlines()[1:]:
+#     line.readline().split(',').strip()
+#     line_count+=1
+#     data.append(line)
+        
+# print(line_count)
+# print(data)
+
+list_of_lists=[]
+data = file.readlines()
+res = [i.strip("[]").split(", ") for i in data]
+# lists = [i.strip("\n").split(", ") for i in res]
+for i in res:
+    i.split(',')
+#     i.strip("[]").split(", ").replace("/n", "")
+    print(i)
+# print(res[0])
 
 # Words is the last line of the doc as a list of objects[]
     #   words=line.replace('\n', '').split(',')
